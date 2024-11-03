@@ -11,10 +11,12 @@ import lombok.AllArgsConstructor;
 import lombok.EqualsAndHashCode;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
+import lombok.Setter;
 
 @Table(name = "livro")
 @Entity(name = "livro")
 @Getter
+@Setter
 @NoArgsConstructor
 @AllArgsConstructor
 @EqualsAndHashCode(of = "id")
@@ -28,6 +30,7 @@ public class Livro {
 	private String isbn;
 	private Integer unidades;
 	private Integer preco;
+	private String imagem;
 	
 	public Livro(LivroRequestDTO data) {
 		this.titulo = data.titulo();
@@ -35,6 +38,7 @@ public class Livro {
 		this.isbn = data.isbn();
 		this.unidades = data.unidades();
 		this.preco = data.preco();
+		this.imagem = data.imagem();
 	}	
 	
 }	
