@@ -4,6 +4,7 @@ import { deleteLivros, getLivros, updateLivros } from "../../services/api";
 import Modal from "../Modal/Modal";
 import NewButton from "../NewButton/NewButton";
 import { LuPencil, LuXCircle } from 'react-icons/lu';
+import defaultImg from '../../assets/default-img.png';
 
 export default function LivroInfo() {
     const [livros, setLivros] = useState([]);
@@ -78,9 +79,21 @@ export default function LivroInfo() {
                             <p className='app-livro-ls-creator'>{livro.autor}</p>
                         </div>
 
-                        <div className='app-livro-ls-infos'>
-                            <p className='app-livro-ls-unities'>{livro.unidades}</p>
-                            <p className='app-livro-ls-price'>R$ {livro.preco}</p>
+                        <div className="app-livro-ls-addinfo">
+                            <img src={defaultImg} alt="Default" width={123} height={163} />
+
+                            <div className='app-livro-ls-infos'>
+                                <p className='app-livro-ls-unities'>{livro.unidades} unidades</p>
+                                <p className='app-livro-ls-price'>R$ {livro.preco}</p>
+                            </div>
+
+                        </div>
+                        <div className='app-livro-ls-btm'>
+                            <div className='app-livro-ls-btm-clr red' />
+                            <div className='app-livro-ls-btm-clr yellow' />
+                            <div className='app-livro-ls-btm-clr purple' />
+                            <div className='app-livro-ls-btm-clr blue' />
+                            <div className='app-livro-ls-btm-clr green' />
                         </div>
 
                     </li>

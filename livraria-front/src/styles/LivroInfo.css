@@ -1,65 +1,119 @@
-@import url('../fonts/fonts.css');
-@import url('../colors/colors.css');
+@import url("../fonts/fonts.css");
+@import url("../colors/colors.css");
 
 .app-livros {
-    text-align: center;
+  text-align: center;
 }
 
 .app-livro-ls {
-    max-width: 57.375rem; /* 918px */
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    margin-top: 2.625rem;
-    gap: 1.875rem;
+  max-width: 57.375rem; /* 918px */
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  margin-top: 2.625rem;
+  gap: 1.875rem;
 }
 
 .app-livro-ls > li {
-    width: 17.875rem; /* 286px */
-    height: auto;
-    position: relative;
-    border: solid 2px var(--library-black);
-    border-radius: 10px;
-    background-color: var(--library-brown-3);
+  width: 17.875rem; /* 286px */
+  height: auto;
+  position: relative;
+  border: solid 2px var(--library-black);
+  border-radius: 10px;
+  background-color: var(--library-brown-3);
 }
 
 .app-livro-ls-isbn {
-    font-family: var(--gentium-book-plus);
-    font-weight: var(--normal);
-    font-size: var(--library-fnt10);
-    padding-top: 0.5rem;
-    padding-bottom: 0.5rem;
+  font-family: var(--gentium-book-plus);
+  font-weight: var(--normal);
+  font-size: var(--library-fnt10);
+  padding-top: 0.5rem;
+  padding-bottom: 0.5rem;
 }
 
 .app-livro-ls-h {
-    position: absolute;
-    top: 0.3125rem;
-    right: 0.4375rem; /* 7px */
-    display: flex;
-    gap: 0.625rem; /* 10px */
+  position: absolute;
+  top: 0.3125rem;
+  right: 0.4375rem; /* 7px */
+  display: flex;
+  gap: 0.625rem; /* 10px */
 }
 
 .app-livro-ls-h > button {
-    cursor: pointer;
+  cursor: pointer;
 }
 
 .app-livro-ls-main {
-    display: flex;
-    flex-direction: column;
-    background-color: var(--library-brown-1);
-    padding-bottom: 0.4375rem;
-    border-top: solid 1px var(--library-black);
-    border-bottom: solid 1px var(--library-black);
+  display: flex;
+  flex-direction: column;
+  background-color: var(--library-brown-1);
+  padding-bottom: 0.4375rem;
+  border-top: solid 1px var(--library-black);
+  border-bottom: solid 1px var(--library-black);
 }
 
 .app-livro-ls-title {
-    font-family: var(--gentium-book-plus);
-    font-weight: var(--bold);
-    font-size: var(--library-fnt24);
+  font-family: var(--gentium-book-plus);
+  font-weight: var(--bold);
+  font-size: var(--library-fnt24);
 }
 
 .app-livro-ls-creator {
-    font-family: var(--gentium-book-plus);
-    font-weight: var(--normal);
-    font-size: var(--library-fnt12);
+  font-family: var(--gentium-book-plus);
+  font-weight: var(--normal);
+  font-size: var(--library-fnt12);
+}
+
+.app-livro-ls-addinfo {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  padding-top: 0.5625rem; /* 9px */
+  padding-bottom: 1.25rem; /* 20px */
+  border-bottom: solid 1px var(--library-black);
+}
+
+.app-livro-ls-unities {
+  font-family: var(--gentium-book-plus);
+  font-weight: var(--normal);
+  font-size: var(--library-fnt11);
+}
+
+.app-livro-ls-price {
+  font-family: var(--gentium-book-plus);
+  font-weight: var(--bold);
+  font-size: var(--library-fnt24);
+}
+
+.app-livro-ls-btm {
+  display: flex;
+  width: 100%;
+  height: 1.625rem; /* 26px */
+}
+
+.app-livro-ls-btm-clr {
+  flex: 1;
+  height: 100%;
+}
+
+.red {
+  background-color: var(--library-red);
+  border-bottom-left-radius: 9px;
+}
+
+.yellow {
+  background-color: var(--library-yellow);
+}
+
+.purple {
+  background-color: var(--library-purple);
+}
+
+.blue {
+  background-color: var(--library-blue);
+}
+
+.green {
+  background-color: var(--library-green);
+  border-bottom-right-radius: 9px;
 }

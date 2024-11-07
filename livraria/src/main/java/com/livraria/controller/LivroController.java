@@ -3,7 +3,6 @@ package com.livraria.controller;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -12,7 +11,6 @@ import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
-import org.springframework.web.client.RestTemplate;
 
 import com.livraria.DTO.LivroRequestDTO;
 import com.livraria.DTO.LivroResponseDTO;
@@ -26,8 +24,6 @@ public class LivroController {
 	@Autowired
 	LivroRepository repo;
 	
-	private static final String GOOGLE_API_BOOKS_API_URL = "https://www.googleapis.com/books/v1/volumes?q=isbn:";
-
 	@GetMapping
 	public List<LivroResponseDTO> getLivros() {
 		// Trandsforma o DTO em uma lista
@@ -53,7 +49,6 @@ public class LivroController {
 		existingLivro.setIsbn(data.isbn());
 		existingLivro.setUnidades(data.unidades());
 		existingLivro.setPreco(data.preco());
-		existingLivro.setUrlImagem(data.urlImagem());
 		
 		Livro updatedLivro = repo.save(existingLivro);
 

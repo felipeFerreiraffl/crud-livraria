@@ -1,0 +1,102 @@
+@import url("../fonts/fonts.css");
+@import url("../colors/colors.css");
+
+.app-modal {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 46.975rem; /* 750px */
+  height: auto;
+  display: flex;
+  flex-direction: column;
+  background-color: var(--library-brown-3);
+  border: solid 2px var(--library-black);
+  border-radius: 10px;
+  padding-bottom: 1.3125rem; /* 21px */
+  z-index: 1000;
+}
+
+.app-modal > h1 {
+    font-family: var(--gentium-book-plus);
+    font-weight: var(--bold);
+    font-size: var(--library-fnt24);
+    margin-top: 1.875rem; /* 30px */
+}
+
+.app-modal-form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.625rem; /* 10px */
+}
+
+.app-modal-form-inp {
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    gap: 0.0625rem; /* 1px */
+}
+
+.app-modal-form-inp > label {
+    font-family: var(--gentium-book-plus);
+    font-weight: var(--bold);
+    font-size: var(--library-fnt14);
+}
+
+.app-modal-form-inp > input {
+    width: 18.3125rem; /* 293px */
+    height: auto;
+    padding-left: 0.625rem;
+    padding-top: 0.3125rem;
+    padding-bottom: 0.3125rem; /* 5px */
+    border: solid 1px var(--library-black);
+    border-radius: 5px; 
+    background-color: var(--library-white);
+    font-family: var(--gentium-book-plus);
+    font-weight: var(--bold);
+    font-size: var(--library-fnt12);
+}
+
+.app-modal-form-inp > input[type=number]::-webkit-inner-spin-button,
+.app-modal-form-inp > input[type=number]::-webkit-outer-spin-button {
+    display: none;
+}
+
+.app-modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  z-index: 100;
+}
+
+.app-modal-btn-area {
+    display: flex;
+    align-items: center;
+    margin-top: 1.9375rem; /* 31px */
+    gap: 3.4375rem; /* 55px */
+}
+
+.app-modal-btn {
+    cursor: pointer;
+    width: 8.25rem; /* 132px */
+    height: auto;
+    padding-top: 0.3125rem; 
+    padding-bottom: 0.3125rem;
+    border: solid 2px var(--library-black);
+    border-radius: 5px;
+    font-family: var(--gentium-book-plus);
+    font-weight: var(--bold);
+    font-size: var(--library-fnt16);
+}
+
+.close {
+    background-color: var(--library-red);
+}
+
+.confirm {
+    background-color: var(--library-green);
+}

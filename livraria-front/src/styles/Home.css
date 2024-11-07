@@ -5,11 +5,17 @@
     display: flex;
     flex-direction: column;
     align-items: center;
+    background-image: url('../assets/library-background.png');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 100vh;
 }
 
 .app-title-area {
     display: flex;
     align-items: center;
+    margin-top: 3.125rem; /* 50px */
     gap: 0.9375rem;
 }
 
