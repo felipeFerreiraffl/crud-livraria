@@ -1,0 +1,14 @@
+:root {
+    --library-brown-0: #F5DEB3;
+    --library-brown-1: #DEB887;
+    --library-brown-2: #D2B48C;
+    --library-brown-3: #E9AA5A;
+    --library-red: #FF6347;
+    --library-yellow: #ECDF6B;
+    --library-purple: #EE82EE;
+    --library-blue: #56C5C1;
+    --library-green: #32CD32;
+    --library-white: #FFF;
+    --library-black: #000;
+    --library-gradient-btn: linear-gradient(#E9AA5A, #DEB887, #F5DEB3);
+}

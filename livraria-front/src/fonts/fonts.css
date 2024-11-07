@@ -1,0 +1,23 @@
+@import url('https://fonts.googleapis.com/css2?family=Gentium+Book+Plus:ital,wght@0,400;0,700;1,400;1,700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&display=swap');
+
+:root {
+    /* font-family */
+    --gentium-book-plus: 'Gentium Book Plus', serif;
+    --libre-baskerville: 'Libre Baskerville', serif;
+
+    /* font-size */
+    --library-fnt-title: 3rem /* 48px */;
+    --library-fnt-sub: 1.75rem /* 28px */;
+    --library-fnt10: 0.625rem /* 10px */;
+    --library-fnt11: 0.6875rem /* 11px */;
+    --library-fnt12: 0.75rem /* 12px */;
+    --library-fnt14: 0.875rem /* 14px */;
+    --library-fnt16: 1rem /* 16px */;
+    --library-fnt20: 1.25rem /* 20px */;
+    --library-fnt24: 1.5rem /* 24px */;
+
+    /* font-weight */
+    --bold: bold;
+    --normal: normal;
+}

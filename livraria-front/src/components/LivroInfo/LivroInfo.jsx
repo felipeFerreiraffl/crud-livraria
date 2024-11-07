@@ -1,8 +1,8 @@
 import React, { useEffect, useState } from "react";
-import { deleteLivros, getLivros, updateLivros } from "../services/api";
-import Modal from "./Modal";
+import { deleteLivros, getLivros, updateLivros } from "../../services/api";
+import Modal from "../Modal/Modal";
 
-function LivroInfo() {
+export default function LivroInfo() {
     const [livros, setLivros] = useState([]);
     const [isModalOpen, setIsModalOpen] = useState(false);
     const [livroEdit, setLivroEdit] = useState(null);
@@ -64,13 +64,13 @@ function LivroInfo() {
                         <p>isbn: {livro.isbn}</p>
                         <p>unidades: {livro.unidades}</p>
                         <p>preço: R$ {livro.preco}</p>
-                        <img src={livro.imagem} alt={livro.titulo} />
+                        <img src={livro.urlImagem} alt={livro.titulo} width={200} height="auto" />
                         <button onClick={() => handleOpenModal(livro)}>ATUALIZAR</button>
                         <button onClick={() => handleDeleteLivros(livro.id)}>DELETAR</button>
                     </li>
                 ))}
             </ul>
-            <button onClick={handleOpenModal}>CRIAR</button>
+            <button onClick={() => handleOpenModal(null)}>CRIAR</button>
             {isModalOpen && (
                 <Modal
                     livro={livroEdit}
@@ -82,5 +82,3 @@ function LivroInfo() {
         </div>
     );
 }
-
-export default LivroInfo;

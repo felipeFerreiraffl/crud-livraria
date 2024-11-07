@@ -1,13 +1,13 @@
 import React, { useEffect, useState } from "react";
-import { createLivros } from "../services/api";
+import { createLivros, fetchLivroImagem } from "../../services/api";
 
-function Modal({ livro, onLivroCreated, onLivroUpdated, onClose }) {
+export default function Modal({ livro, onLivroCreated, onLivroUpdated, onClose }) {
     const [titulo, setTitulo] = useState("");
     const [autor, setAutor] = useState("");
     const [isbn, setIsbn] = useState("");
     const [unidades, setUnidades] = useState(0);
     const [preco, setPreco] = useState(0);
-    const [imagem, setImagem] = useState(null);
+    const [imagem, setImagem] = useState("");
 
     // Função que usa o POST para criar livros
     // Ou PUT para atualizar livros
@@ -19,18 +19,7 @@ function Modal({ livro, onLivroCreated, onLivroUpdated, onClose }) {
         if (livro) {
             await onLivroUpdated({ ...newLivro, id: livro.id });
         } else {
-            const formData = new FormData();
-            formData.append("titulo", titulo);
-            formData.append("autor", autor);
-            formData.append("isbn", isbn);
-            formData.append("unidades", unidades);
-            formData.append("preco", preco);
-            if (imagem) {
-                formData.append("imagem", imagem);
-            }
-
             await createLivros(newLivro);
-            onLivroCreated();
         }
 
         // Limpa o formulário
@@ -39,19 +28,37 @@ function Modal({ livro, onLivroCreated, onLivroUpdated, onClose }) {
         setIsbn("");
         setUnidades(0);
         setPreco(0);
-        setImagem(null);
 
         onClose();
+        onLivroCreated();
 
     }
 
     useEffect(() => {
         if (livro) {
-            setTitulo();
-            setAutor();
-            setIsbn();
-            setUnidades();
-            setPreco();
+            setTitulo(livro.titulo);
+            setAutor(livro.autor);
+            setIsbn(livro.isbn);
+            setUnidades(livro.unidades);
+            setPreco(livro.preco);
+
+            const fetchImage = async () => {
+                await fetchLivroImagem(livro.isbn);
+
+                if (imagem) {
+                    setImagem(imagem);
+                }
+            }
+
+            fetchImage();
+
+        } else {
+            setTitulo("");
+            setAutor("");
+            setIsbn("");
+            setUnidades(0);
+            setPreco(0);
+            setImagem("");
         }
 
     }, [livro]);
@@ -90,16 +97,12 @@ function Modal({ livro, onLivroCreated, onLivroUpdated, onClose }) {
                     value={preco}
                     onChange={(e) => setPreco(e.target.value)}
                 />
-                <input
-                    type="file"
-                    accept="image/*" // Aceita apenas imagens
-                    onChange={(e) => setImagem(e.target.files[0])}
-                />
+                {livro.urlImagem && (
+                    <img src={livro.urlImagem} alt={livro.titulo} width={200} height="auto" />
+                )}
                 <button type="button" onClick={onClose}>Fechar</button>
                 <button type="submit">{livro ? "Atualizar" : "Criar"}</button>
             </form>
         </div>
     );
 }
-
-export default Modal;

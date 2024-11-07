@@ -1,0 +1,27 @@
+@import url('../fonts/fonts.css');
+@import url('../colors/colors.css');
+
+.app-all {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.app-title-area {
+    display: flex;
+    align-items: center;
+    gap: 0.9375rem;
+}
+
+.app-title {
+    font-family: var(--libre-baskerville);
+    font-size: var(--library-fnt-title);
+    font-weight: var(--bold);
+}
+
+.app-subtitle {
+    font-family: var(--libre-baskerville);
+    font-weight: var(--normal);
+    font-size: var(--library-fnt-sub);
+    margin-top: 0.5rem;
+}

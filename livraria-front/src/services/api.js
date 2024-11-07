@@ -21,14 +21,12 @@ export const getLivros = async () => {
     }
 };
 
-export const createLivros = async (formData) => {
+export const createLivros = async (livro) => {
     try {
         const response = await fetch(API_URL, {
             method: 'POST',
-            headers: {
-                'Content-Type': 'application/json'
-            },
-            body: formData,
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify(livro),
         });
 
         if (!response.ok) {
@@ -44,12 +42,11 @@ export const createLivros = async (formData) => {
 };
 
 export const updateLivros = async (id, livro) => {
+    
     try {
         const response = await fetch(`${API_URL}/${id}`, {
             method: 'PUT',
-            headers: {
-                'Content-Type': 'application/json'
-            },
+            headers: { 'Content-Type': 'application/json' },
             body: JSON.stringify(livro),
         });
 
@@ -80,5 +77,27 @@ export const deleteLivros = async (id) => {
     } catch (error) {
         console.error("Erro no método DELETE: ", error);
         return false;
+    }
+};
+
+export const fetchLivroImagem = async (isbn) => {
+    const googleBookAPI = `https://www.googleapis.com/books/v1/volumes?q=isbn:${isbn}`;
+
+    try {
+        const response = await fetch(googleBookAPI);
+        const data = await response.json();
+
+        if (data.items && data.items.length > 0) {
+            const imageUrl = data.items[0].volumeInfo.imageLinks?.thumnbnail;
+            return imageUrl;
+
+        }
+
+        return null;
+
+    } catch (error) {
+        console.error("Erro ao buscar a imagem do livro", error);
+        return null;
+
     }
 };
