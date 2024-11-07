@@ -1,6 +1,9 @@
+import '../../styles/LivroInfo.css';
 import React, { useEffect, useState } from "react";
 import { deleteLivros, getLivros, updateLivros } from "../../services/api";
 import Modal from "../Modal/Modal";
+import NewButton from "../NewButton/NewButton";
+import { LuPencil, LuXCircle } from 'react-icons/lu';
 
 export default function LivroInfo() {
     const [livros, setLivros] = useState([]);
@@ -54,23 +57,35 @@ export default function LivroInfo() {
     }, []);
 
     return (
-        <div>
-            <h1>Lista</h1>
-            <ul>
+        <div className='app-livros'>
+            <NewButton onClick={() => handleOpenModal(null)} />
+            <ul className="app-livro-ls">
                 {livros.map((livro, index) => (
                     <li key={index}>
-                        <p>título: {livro.titulo}</p>
-                        <p>autor: {livro.autor}</p>
-                        <p>isbn: {livro.isbn}</p>
-                        <p>unidades: {livro.unidades}</p>
-                        <p>preço: R$ {livro.preco}</p>
-                        <img src={livro.urlImagem} alt={livro.titulo} width={200} height="auto" />
-                        <button onClick={() => handleOpenModal(livro)}>ATUALIZAR</button>
-                        <button onClick={() => handleDeleteLivros(livro.id)}>DELETAR</button>
+                        <p className='app-livro-ls-isbn'>{livro.isbn}</p>
+
+                        <div className='app-livro-ls-h'>
+                            <button onClick={() => handleOpenModal(livro)}>
+                                <LuPencil fontSize={20} />
+                            </button>
+                            <button onClick={() => handleDeleteLivros(livro.id)}>
+                                <LuXCircle fontSize={20} />
+                            </button>
+                        </div>
+
+                        <div className='app-livro-ls-main'>
+                            <p className='app-livro-ls-title'>{livro.titulo}</p>
+                            <p className='app-livro-ls-creator'>{livro.autor}</p>
+                        </div>
+
+                        <div className='app-livro-ls-infos'>
+                            <p className='app-livro-ls-unities'>{livro.unidades}</p>
+                            <p className='app-livro-ls-price'>R$ {livro.preco}</p>
+                        </div>
+
                     </li>
                 ))}
             </ul>
-            <button onClick={() => handleOpenModal(null)}>CRIAR</button>
             {isModalOpen && (
                 <Modal
                     livro={livroEdit}

@@ -1,0 +1,17 @@
+.app-new-btn {
+    cursor: pointer;
+    margin-top: 2.5625rem;
+    background: var(--library-gradient-btn);
+    padding: 0.3125rem 1.125rem;
+    border: solid 2px var(--library-black);
+    border-radius: 5px;
+    font-family: var(--gentium-book-plus);
+    font-size: var(--library-fnt16);
+    font-weight: var(--bold);
+}
+
+.app-new-btn > div {
+    display: flex;
+    align-items: center;
+    gap: 0.3125rem;
+}

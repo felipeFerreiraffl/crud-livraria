@@ -7,7 +7,6 @@ export default function Modal({ livro, onLivroCreated, onLivroUpdated, onClose }
     const [isbn, setIsbn] = useState("");
     const [unidades, setUnidades] = useState(0);
     const [preco, setPreco] = useState(0);
-    const [imagem, setImagem] = useState("");
 
     // Função que usa o POST para criar livros
     // Ou PUT para atualizar livros
@@ -42,23 +41,12 @@ export default function Modal({ livro, onLivroCreated, onLivroUpdated, onClose }
             setUnidades(livro.unidades);
             setPreco(livro.preco);
 
-            const fetchImage = async () => {
-                await fetchLivroImagem(livro.isbn);
-
-                if (imagem) {
-                    setImagem(imagem);
-                }
-            }
-
-            fetchImage();
-
         } else {
             setTitulo("");
             setAutor("");
             setIsbn("");
             setUnidades(0);
             setPreco(0);
-            setImagem("");
         }
 
     }, [livro]);
@@ -97,9 +85,6 @@ export default function Modal({ livro, onLivroCreated, onLivroUpdated, onClose }
                     value={preco}
                     onChange={(e) => setPreco(e.target.value)}
                 />
-                {livro.urlImagem && (
-                    <img src={livro.urlImagem} alt={livro.titulo} width={200} height="auto" />
-                )}
                 <button type="button" onClick={onClose}>Fechar</button>
                 <button type="submit">{livro ? "Atualizar" : "Criar"}</button>
             </form>

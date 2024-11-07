@@ -1,0 +1,65 @@
+@import url('../fonts/fonts.css');
+@import url('../colors/colors.css');
+
+.app-livros {
+    text-align: center;
+}
+
+.app-livro-ls {
+    max-width: 57.375rem; /* 918px */
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    margin-top: 2.625rem;
+    gap: 1.875rem;
+}
+
+.app-livro-ls > li {
+    width: 17.875rem; /* 286px */
+    height: auto;
+    position: relative;
+    border: solid 2px var(--library-black);
+    border-radius: 10px;
+    background-color: var(--library-brown-3);
+}
+
+.app-livro-ls-isbn {
+    font-family: var(--gentium-book-plus);
+    font-weight: var(--normal);
+    font-size: var(--library-fnt10);
+    padding-top: 0.5rem;
+    padding-bottom: 0.5rem;
+}
+
+.app-livro-ls-h {
+    position: absolute;
+    top: 0.3125rem;
+    right: 0.4375rem; /* 7px */
+    display: flex;
+    gap: 0.625rem; /* 10px */
+}
+
+.app-livro-ls-h > button {
+    cursor: pointer;
+}
+
+.app-livro-ls-main {
+    display: flex;
+    flex-direction: column;
+    background-color: var(--library-brown-1);
+    padding-bottom: 0.4375rem;
+    border-top: solid 1px var(--library-black);
+    border-bottom: solid 1px var(--library-black);
+}
+
+.app-livro-ls-title {
+    font-family: var(--gentium-book-plus);
+    font-weight: var(--bold);
+    font-size: var(--library-fnt24);
+}
+
+.app-livro-ls-creator {
+    font-family: var(--gentium-book-plus);
+    font-weight: var(--normal);
+    font-size: var(--library-fnt12);
+}

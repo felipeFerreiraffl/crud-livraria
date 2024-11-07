@@ -2,11 +2,13 @@ package com.livraria.model;
 
 import com.livraria.DTO.LivroRequestDTO;
 
+import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jakarta.persistence.Table;
+import jakarta.validation.constraints.NotNull;
 import lombok.AllArgsConstructor;
 import lombok.EqualsAndHashCode;
 import lombok.Getter;
@@ -30,7 +32,7 @@ public class Livro {
 	private String isbn;
 	private Integer unidades;
 	private Integer preco;
-	private String imagem;
+	private String urlImagem;
 	
 	public Livro(LivroRequestDTO data) {
 		this.titulo = data.titulo();
@@ -38,7 +40,6 @@ public class Livro {
 		this.isbn = data.isbn();
 		this.unidades = data.unidades();
 		this.preco = data.preco();
-		this.imagem = data.imagem();
 	}	
 	
 }	

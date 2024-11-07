@@ -10,5 +10,5 @@
     --library-green: #32CD32;
     --library-white: #FFF;
     --library-black: #000;
-    --library-gradient-btn: linear-gradient(#E9AA5A, #DEB887, #F5DEB3);
+    --library-gradient-btn: linear-gradient(90deg,#E9AA5A, #DEB887, #F5DEB3);
 }
