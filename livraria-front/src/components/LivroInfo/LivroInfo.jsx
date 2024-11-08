@@ -66,10 +66,10 @@ export default function LivroInfo() {
                         <p className='app-livro-ls-isbn'>{livro.isbn}</p>
 
                         <div className='app-livro-ls-h'>
-                            <button onClick={() => handleOpenModal(livro)}>
+                            <button className='update' onClick={() => handleOpenModal(livro)}>
                                 <LuPencil fontSize={20} />
                             </button>
-                            <button onClick={() => handleDeleteLivros(livro.id)}>
+                            <button className='delete' onClick={() => handleDeleteLivros(livro.id)}>
                                 <LuXCircle fontSize={20} />
                             </button>
                         </div>

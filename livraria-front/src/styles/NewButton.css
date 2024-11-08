@@ -1,3 +1,6 @@
+@import url('../colors/colors.css');
+@import url('../fonts/fonts.css');
+
 .app-new-btn {
     cursor: pointer;
     margin-top: 2.5625rem;
@@ -8,6 +11,11 @@
     font-family: var(--gentium-book-plus);
     font-size: var(--library-fnt16);
     font-weight: var(--bold);
+    transition: 0.5s ease-in-out;
+}
+
+.app-new-btn:hover {
+    filter: brightness(1.1);
 }
 
 .app-new-btn > div {

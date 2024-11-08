@@ -18,6 +18,10 @@ export default function Modal({ livro, onLivroCreated, onLivroUpdated, onClose }
         event.preventDefault();
 
         const newLivro = { titulo, autor, isbn: Number(isbn), unidades: Number(unidades), preco: Number(preco), imagemUrl: url };
+        
+        if (isbn.length > 13) {
+            alert("ISBN só vai até 13 números");
+        }
 
         if (livro) {
             await onLivroUpdated({ ...newLivro, id: livro.id });

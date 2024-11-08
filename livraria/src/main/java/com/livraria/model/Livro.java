@@ -7,6 +7,9 @@ import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jakarta.persistence.Table;
+import jakarta.validation.constraints.NotEmpty;
+import jakarta.validation.constraints.NotNull;
+import jakarta.validation.constraints.Size;
 import lombok.AllArgsConstructor;
 import lombok.EqualsAndHashCode;
 import lombok.Getter;
@@ -25,11 +28,22 @@ public class Livro {
 	@Id @GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long id;
 	
+	@NotNull
 	private String titulo;
+	
+	@NotNull
 	private String autor;
+	
+	@NotNull
+	@Size(max = 13)
 	private Long isbn;
+	
+	@NotEmpty
 	private Integer unidades;
+	
+	@NotEmpty
 	private Integer preco;
+	
 	private String imagemUrl;
 	
 	public Livro(LivroRequestDTO data) {

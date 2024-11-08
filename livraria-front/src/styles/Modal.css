@@ -45,7 +45,8 @@
     gap: 0.3125rem; /* 5px */
 }
 
-.app-modal-upload-img > label {
+.app-modal-upload-img > label,
+.app-modal-form-inp > label {
     font-family: var(--gentium-book-plus);
     font-weight: var(--bold);
     font-size: var(--library-fnt14);
@@ -63,6 +64,7 @@
     font-family: var(--gentium-book-plus);
     font-weight: var(--normal);
     font-size: var(--library-fnt12);
+    outline: none;
 }
 
 .app-modal-upload-img > img {
@@ -74,12 +76,6 @@
     flex-direction: column;
     align-items: start;
     gap: 0.0625rem; /* 1px */
-}
-
-.app-modal-form-inp > label {
-    font-family: var(--gentium-book-plus);
-    font-weight: var(--bold);
-    font-size: var(--library-fnt14);
 }
 
 .app-modal-form-inp > input {
@@ -94,6 +90,7 @@
     font-family: var(--gentium-book-plus);
     font-weight: var(--normal);
     font-size: var(--library-fnt12);
+    outline: none;
 }
 
 .app-modal-form-inp > input[type=number]::-webkit-inner-spin-button,
@@ -129,6 +126,11 @@
     font-family: var(--gentium-book-plus);
     font-weight: var(--bold);
     font-size: var(--library-fnt16);
+    transition: 0.5s ease-in-out;
+}
+
+.app-modal-btn:hover {
+    filter: brightness(1.2);
 }
 
 .close {

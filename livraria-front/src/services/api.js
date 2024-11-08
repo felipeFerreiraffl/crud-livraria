@@ -28,6 +28,10 @@ export const createLivros = async (livro) => {
       body: JSON.stringify(livro),
     });
 
+    if (response.status === 500) {
+      alert("Os campos não podem estar vazios");
+    }
+
     if (!response.ok) {
       throw new Error("Erro ao tentar criar livros");
     }
@@ -46,6 +50,10 @@ export const updateLivros = async (id, livro) => {
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify(livro),
     });
+
+    if (response.status === 500) {
+      alert("Os campos não podem estar vazios");
+    }
 
     if (!response.ok) {
       throw new Error("Erro ao tentar atualizar livros");
@@ -74,18 +82,3 @@ export const deleteLivros = async (id) => {
     return false;
   }
 };
-
-export const uploadLivroImagem = async (formData, imagem) => {
-  try {
-    const response = await fetch(`${API_URL}/uploadImagem`, {
-      method: "POST",
-      body: formData
-    })
-
-    await response.text();
-
-  } catch (error) {
-    console.error();
-    
-  }
-}

@@ -25,6 +25,8 @@ import com.livraria.DTO.LivroResponseDTO;
 import com.livraria.model.Livro;
 import com.livraria.repository.LivroRepository;
 
+import jakarta.validation.Valid;
+
 @RestController
 @RequestMapping("/livraria")
 public class LivroController {
@@ -40,7 +42,7 @@ public class LivroController {
 	}
 
 	@PostMapping
-	public LivroResponseDTO saveLivro(@RequestBody LivroRequestDTO data) {
+	public LivroResponseDTO saveLivro(@RequestBody @Valid LivroRequestDTO data) {
 		Livro livroData = new Livro(data);
 		
 		Livro savedLivro = repo.save(livroData);
@@ -48,7 +50,7 @@ public class LivroController {
 	}
 		
 	@PutMapping("/{id}")
-	public LivroResponseDTO updateLivro(@RequestBody LivroRequestDTO data, @PathVariable Long id) {
+	public LivroResponseDTO updateLivro(@RequestBody @Valid LivroRequestDTO data, @PathVariable @Valid Long id) {
 		Livro existingLivro = repo.findById(id)
 				.orElseThrow(() -> new RuntimeException("Livro não encontrado com id: " + id));
 
@@ -66,7 +68,7 @@ public class LivroController {
 	}
 
 	@DeleteMapping("/{id}")
-	public void deleteLivro(@PathVariable Long id) {
+	public void deleteLivro(@PathVariable @Valid Long id) {
 		Livro existingLivro = repo.findById(id)
 				.orElseThrow(() -> new RuntimeException("Livro não encontrado com id: " + id));
 
