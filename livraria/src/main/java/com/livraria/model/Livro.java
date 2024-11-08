@@ -30,6 +30,7 @@ public class Livro {
 	private Long isbn;
 	private Integer unidades;
 	private Integer preco;
+	private String imagemUrl;
 	
 	public Livro(LivroRequestDTO data) {
 		this.titulo = data.titulo();
@@ -37,6 +38,7 @@ public class Livro {
 		this.isbn = data.isbn();
 		this.unidades = data.unidades();
 		this.preco = data.preco();
+		this.imagemUrl = data.imagemUrl();
 	}	
 	
 }	

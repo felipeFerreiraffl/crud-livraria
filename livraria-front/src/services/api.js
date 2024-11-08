@@ -74,3 +74,18 @@ export const deleteLivros = async (id) => {
     return false;
   }
 };
+
+export const uploadLivroImagem = async (formData, imagem) => {
+  try {
+    const response = await fetch(`${API_URL}/uploadImagem`, {
+      method: "POST",
+      body: formData
+    })
+
+    await response.text();
+
+  } catch (error) {
+    console.error();
+    
+  }
+}

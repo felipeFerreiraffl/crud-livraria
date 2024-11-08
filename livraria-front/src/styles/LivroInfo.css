@@ -8,10 +8,12 @@
 .app-livro-ls {
   max-width: 57.375rem; /* 918px */
   display: flex;
+  flex-wrap: wrap;
   flex-direction: row;
   align-items: center;
   margin-top: 2.625rem;
   gap: 1.875rem;
+  padding-bottom: 8.5625rem; /* 137px */
 }
 
 .app-livro-ls > li {
@@ -71,6 +73,10 @@
   padding-top: 0.5625rem; /* 9px */
   padding-bottom: 1.25rem; /* 20px */
   border-bottom: solid 1px var(--library-black);
+}
+
+.app-livro-ls-addinfo > img {
+  border-radius: 5px;
 }
 
 .app-livro-ls-unities {

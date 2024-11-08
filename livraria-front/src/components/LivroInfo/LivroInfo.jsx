@@ -80,7 +80,7 @@ export default function LivroInfo() {
                         </div>
 
                         <div className="app-livro-ls-addinfo">
-                            <img src={defaultImg} alt="Default" width={123} height={163} />
+                            <img src={livro.imagemUrl || defaultImg} alt={livro.titulo} width={123} height={163} />
 
                             <div className='app-livro-ls-infos'>
                                 <p className='app-livro-ls-unities'>{livro.unidades} unidades</p>
@@ -88,6 +88,7 @@ export default function LivroInfo() {
                             </div>
 
                         </div>
+
                         <div className='app-livro-ls-btm'>
                             <div className='app-livro-ls-btm-clr red' />
                             <div className='app-livro-ls-btm-clr yellow' />
@@ -107,6 +108,7 @@ export default function LivroInfo() {
                     onLivroUpdated={handleUpdateLivro}
                 />
             )}
+
         </div>
     );
 }

@@ -29,6 +29,44 @@
     flex-direction: column;
     align-items: center;
     gap: 0.625rem; /* 10px */
+    margin-top: 1.8125rem; /* 29px */
+}
+
+.app-modal-form-area {
+    display: flex;
+    align-items: start;
+    gap: 6.375rem; /* 102px */
+}
+
+.app-modal-upload-img {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.3125rem; /* 5px */
+}
+
+.app-modal-upload-img > label {
+    font-family: var(--gentium-book-plus);
+    font-weight: var(--bold);
+    font-size: var(--library-fnt14);
+}
+
+.app-modal-upload-img > input {
+    width: 15.625rem; /* 250px */
+    height: auto;
+    padding-left: 0.625rem;
+    padding-top: 0.3125rem;
+    padding-bottom: 0.3125rem; /* 5px */
+    border: solid 1px var(--library-black);
+    border-radius: 5px; 
+    background-color: var(--library-white);
+    font-family: var(--gentium-book-plus);
+    font-weight: var(--normal);
+    font-size: var(--library-fnt12);
+}
+
+.app-modal-upload-img > img {
+    border-radius: 5px;
 }
 
 .app-modal-form-inp {
@@ -54,7 +92,7 @@
     border-radius: 5px; 
     background-color: var(--library-white);
     font-family: var(--gentium-book-plus);
-    font-weight: var(--bold);
+    font-weight: var(--normal);
     font-size: var(--library-fnt12);
 }
 
