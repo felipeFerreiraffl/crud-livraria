@@ -7,9 +7,9 @@ import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jakarta.persistence.Table;
-import jakarta.validation.constraints.NotEmpty;
+import jakarta.validation.constraints.Max;
+import jakarta.validation.constraints.Min;
 import jakarta.validation.constraints.NotNull;
-import jakarta.validation.constraints.Size;
 import lombok.AllArgsConstructor;
 import lombok.EqualsAndHashCode;
 import lombok.Getter;
@@ -35,13 +35,13 @@ public class Livro {
 	private String autor;
 	
 	@NotNull
-	@Size(max = 13)
+	@Min(value = 10, message = "O ISBN deve ter pelo menos 10 números")
 	private Long isbn;
 	
-	@NotEmpty
+	@NotNull
 	private Integer unidades;
 	
-	@NotEmpty
+	@NotNull
 	private Integer preco;
 	
 	private String imagemUrl;
